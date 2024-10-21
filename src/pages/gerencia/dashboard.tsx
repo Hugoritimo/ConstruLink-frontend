@@ -2,7 +2,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { FaUserPlus, FaFileAlt, FaClipboardCheck } from "react-icons/fa";
+import { FaUserPlus, FaClipboardCheck, FaChartBar } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 const GerenciaDashboard = () => {
@@ -53,6 +53,22 @@ const GerenciaDashboard = () => {
           </CardTitle>
           <CardContent className="text-center text-[#666666]">
             <p>Verifique quais RDOs foram preenchidos e por quem.</p>
+          </CardContent>
+        </Card>
+
+        {/* Gráficos de Produção */}
+        <Card
+          onClick={() => router.push("/gerencia/graficos")}
+          className="cursor-pointer hover:shadow-lg transition-shadow bg-white border border-[#cccccc] rounded-lg overflow-hidden"
+        >
+          <CardHeader className="flex flex-col items-center bg-[#af1b1b] p-6">
+            <FaChartBar className="text-5xl text-white" />
+          </CardHeader>
+          <CardTitle className="text-center mt-4 text-xl font-semibold text-[#333333]">
+            Acompanhamento Diário de Produção
+          </CardTitle>
+          <CardContent className="text-center text-[#666666]">
+            <p>Gráficos de produtividade e preenchimento dos RDOs.</p>
           </CardContent>
         </Card>
       </main>
